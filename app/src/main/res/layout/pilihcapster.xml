@@ -11,7 +11,6 @@
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="4dp"
         android:background="@drawable/imgcapsterdanil"
         android:onClick="barberMenu2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +39,7 @@
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
         android:background="@drawable/imgcapsterari"
         android:onClick="barberMenu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,19 +62,35 @@
         app:layout_constraintVertical_bias="0.023"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/capster"
+        android:layout_width="152dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/tulisancapster"
+        android:gravity="center_horizontal|top"
+        app:layout_constraintBottom_toTopOf="@+id/menu_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mask_group"
+        app:layout_constraintVertical_bias="0.512" />
+
     <ImageView
         android:id="@+id/mask_group"
         android:layout_width="241.21dp"
         android:layout_height="241.21dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
         android:background="@drawable/imglogobaber"
         android:elevation="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,6 +64,8 @@ public class BabershopAdapter extends RecyclerView.Adapter<BabershopAdapter.Babe
 
         TextView tvNama, tvDetail;
 
+        
+
         public BabershopViewHolder (View view){
             super(view);
             tvNama = view.findViewById(R.id.tvNama);

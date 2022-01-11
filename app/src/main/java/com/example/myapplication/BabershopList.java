@@ -1,63 +1,76 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.myapplication.Rest.ApiClient;
+import com.example.myapplication.Rest.ApiInterface;
 
-public class BabershopList extends AppCompatActivity implements BabershopAdapter.OnBarberHolderClickListener{
+import java.util.List;
+
+import Model.GetBarber;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class BabershopList extends AppCompatActivity {
 
     RecyclerView rvBaber;
     BabershopAdapter babershopAdapter;
-    ArrayList<Babershop> babershopArrayList;
+
+    private ApiInterface apiInterface;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listbaber);
 
-        GetData();
+
+
+        //Retrofit Recycler View
 
         rvBaber = findViewById(R.id.rvBaber);
+        rvBaber.setHasFixedSize(true);
 
-        babershopAdapter = new BabershopAdapter(babershopArrayList);
-        babershopAdapter.setListener(this);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BabershopList.this);
+        layoutManager = new GridLayoutManager(this, 1);
 
         rvBaber.setLayoutManager(layoutManager);
-        rvBaber.setAdapter(babershopAdapter);
+        callRetrofit();
+
     }
 
-    public void GetData(){
-        babershopArrayList = new ArrayList<>();
-        babershopArrayList.add(new Babershop("Lion Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Metal Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Wolf Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Mafia Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Viper Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Saitama Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Spartan Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Zeus Babershop", "Open"));
-        babershopArrayList.add(new Babershop("Hades Babershop", "Close"));
-        babershopArrayList.add(new Babershop("King Babershop", "Open"));
+    private void callRetrofit() {
+        //membuat object retrofit
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+        Call<List<GetBarber>> call = apiInterface.getBarber();
+
+        call.enqueue(new Callback<List<GetBarber>>() {
+            @Override
+            public void onResponse(Call<List<GetBarber>> call, Response<List<GetBarber>> response) {
+
+                if (response.isSuccessful()){
+                    List<GetBarber> get = response.body();
+                    babershopAdapter = new BabershopAdapter(BabershopList.this,get);
+                    rvBaber.setAdapter(babershopAdapter);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<GetBarber>> call, Throwable t) {
+
+            }
+
+
+        });
+
     }
 
-    @Override
-    public void onClick() {
-
-        Toast.makeText(rvBaber.getContext(), "berhasil",
-                Toast.LENGTH_SHORT).show();
-    }
-
-//    public void BabershopList(View view) {
-//        Intent mainIntent = new Intent(getBaseContext(), BabershopList.class);
-//        startActivity(mainIntent);
-//    }
 
 
 

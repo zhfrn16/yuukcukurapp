@@ -1,22 +1,29 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class BabershopAdapter extends RecyclerView.Adapter<BabershopAdapter.BabershopViewHolder> implements View.OnClickListener{
+import Model.GetBarber;
 
-    private ArrayList<Babershop> ListBabershop = new ArrayList<>();
+public class BabershopAdapter extends RecyclerView.Adapter<BabershopAdapter.BabershopViewHolder> {
 
-    public BabershopAdapter(ArrayList<Babershop> listBabershop) {
-        this.ListBabershop = listBabershop;
+    private final Context context;
+    private final List<GetBarber> barberList;
+
+
+    //konstruktor
+    public BabershopAdapter(Context context , List<GetBarber> barberList){
+        this.context = context;
+        this.barberList = barberList;
     }
 
     @NonNull
@@ -31,53 +38,51 @@ public class BabershopAdapter extends RecyclerView.Adapter<BabershopAdapter.Babe
     @Override
     public void onBindViewHolder(@NonNull BabershopAdapter.BabershopViewHolder holder, int position) {
 
-        holder.tvNama.setText(ListBabershop.get(position).getNama());
-        holder.tvDetail.setText(ListBabershop.get(position).getDetail());
+        final GetBarber getBarber = barberList.get(position);
+
+        Integer id_barber = getBarber.getIdBarber();
+        String nama_barber = getBarber.getNamaBarber();
+        String status = getBarber.getStatus();
+
+
+        holder.tvNama.setText(nama_barber);
+        holder.tvDetail.setText(status);
+
+//        Glide.with(holder.itemView.getContext())
+//                .load(gambar_fitnes)
+//                .apply(new RequestOptions().fitCenter())
+//                .into(holder.gambar_fitnes);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(),BarberMenu.class);
+//                intent.putExtra("GetBarber", (Parcelable) getBarber);
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
+
 
     }
 
-    @Override
-    public void onClick(View view) {
-        if(listener!=null){
-            listener.onClick();
-        }
-    }
-
-
-    //onclicklistener
-    OnBarberHolderClickListener listener = null;
-
-    public interface OnBarberHolderClickListener{
-        void onClick();
-    }
-
-    public void setListener(OnBarberHolderClickListener listener) {
-        this.listener = listener;
-    }
 
     @Override
     public int getItemCount() {
-        return (ListBabershop!=null) ? ListBabershop.size() : 0;
+        return barberList.size();
     }
 
-    public class BabershopViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class BabershopViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvNama, tvDetail;
 
-        
+        public BabershopViewHolder (View itemView){
+            super(itemView);
+            tvNama = itemView.findViewById(R.id.tvNama);
+            tvDetail = itemView.findViewById(R.id.tvDetail);
 
-        public BabershopViewHolder (View view){
-            super(view);
-            tvNama = view.findViewById(R.id.tvNama);
-            tvDetail = view.findViewById(R.id.tvDetail);
-            itemView.setOnClickListener(this);
 
-        }
-
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(view.getContext(), "berhasil",
-                    Toast.LENGTH_SHORT).show();
         }
     }
 

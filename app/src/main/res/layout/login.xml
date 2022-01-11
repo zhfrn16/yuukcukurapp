@@ -23,14 +23,13 @@
         android:layout_height="57dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="128dp"
         android:background="@drawable/imgbuttonlogin"
         android:onClick="checkLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.255"
+        app:layout_constraintTop_toTopOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.805"
         tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
     <TextView
@@ -42,58 +41,10 @@
         android:layout_marginStart="99dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="99dp"
-        android:layout_marginBottom="60dp"
         android:background="@drawable/imglogo"
-        app:layout_constraintBottom_toTopOf="@+id/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="392dp"
-        android:layout_height="286.39dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/imgtextlogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-    <ImageButton
-        android:id="@+id/facebook"
-        android:layout_width="163dp"
-        android:layout_height="57dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/imgfacebook"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.087"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/google"
-        android:layout_width="165dp"
-        android:layout_height="57dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/imggoogle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.082"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextUsername"
@@ -102,25 +53,64 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Username"
-        app:layout_constraintBottom_toBottomOf="@+id/text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="302dp"
         android:layout_height="56dp"
+        android:layout_marginBottom="43dp"
         android:ems="10"
         android:inputType="textPassword"
         android:text="password"
-        app:layout_constraintBottom_toBottomOf="@+id/text"
+        app:layout_constraintBottom_toTopOf="@+id/textregister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textloginto"
+        android:layout_width="392dp"
+        android:layout_height="47.31dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="6sp"
+        android:text="Login To Your Account"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationY="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <TextView
+        android:id="@+id/textregister"
+        android:layout_width="392dp"
+        android:layout_height="47.31dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="91dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="6sp"
+        android:text="Sign up"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:translationY="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

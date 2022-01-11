@@ -1,12 +1,10 @@
 package com.example.myapplication;
 
-import androidx.annotation.MainThread;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BarberMenu extends AppCompatActivity {
 
@@ -14,6 +12,7 @@ public class BarberMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pilihcapster);
+
     }
 
     public void barberMenu(View view) {

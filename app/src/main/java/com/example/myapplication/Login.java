@@ -1,13 +1,11 @@
 package com.example.myapplication;
 
-import androidx.annotation.MainThread;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
 
@@ -29,14 +27,14 @@ public class Login extends AppCompatActivity {
         String username = editTextUsername.getText().toString();
         String password = editTextPassword.getText().toString();
 
-        if (username.equals("admin") && password.equals("1234")) {
+//        if (username.equals("") && password.equals("")) {
             Intent mainIntent = new Intent(getBaseContext(), MainActivity.class);
             startActivity(mainIntent);
-        }else{
-            Toast.makeText(this,"Username atau Password Salah",Toast.LENGTH_SHORT).show();
-            editTextUsername.setText("");
-            editTextPassword.setText("");
-        }
+//        }else{
+//            Toast.makeText(this,"Username atau Password Salah",Toast.LENGTH_SHORT).show();
+//            editTextUsername.setText("");
+//            editTextPassword.setText("");
+//        }
 
 
     }

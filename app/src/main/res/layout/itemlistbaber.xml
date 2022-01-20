@@ -13,7 +13,7 @@
 
 
         <ImageView
-            android:id="@+id/ivFoto"
+            android:id="@+id/gambar"
             android:layout_width="122dp"
             android:layout_height="95dp"
             app:srcCompat="@drawable/logobaber1" />

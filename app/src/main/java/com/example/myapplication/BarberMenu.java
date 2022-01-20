@@ -14,6 +14,10 @@ public class BarberMenu extends AppCompatActivity {
         setContentView(R.layout.pilihcapster);
 
     }
+    public void gmap(View view) {
+        Intent mainIntent = new Intent(getBaseContext(), MapsActivity.class);
+        startActivity(mainIntent);
+    }
 
     public void barberMenu(View view) {
         Intent mainIntent = new Intent(getBaseContext(), ScheduleMenu.class);

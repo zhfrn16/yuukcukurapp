@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Android Studio/app/src/main/res/drawable/backgroundhijau.xml" value="0.290625" />
         <entry key="..\:/Android Studio/app/src/main/res/drawable/backhijau.xml" value="0.15625" />
+        <entry key="..\:/Android Studio/app/src/main/res/drawable/bg_button.xml" value="0.15833333333333333" />
         <entry key="..\:/Android Studio/app/src/main/res/drawable/ic_launcher_background.xml" value="0.290625" />
         <entry key="..\:/Android Studio/app/src/main/res/drawable/ic_rectangle_1.xml" value="0.15625" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/activity_detail_club.xml" value="0.25317028985507245" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/activity_main.xml" value="0.13360507246376813" />
+        <entry key="..\:/Android Studio/app/src/main/res/layout/activity_maps.xml" value="0.13020833333333334" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/historymenu.xml" value="0.25815217391304346" />
-        <entry key="..\:/Android Studio/app/src/main/res/layout/home.xml" value="0.2" />
+        <entry key="..\:/Android Studio/app/src/main/res/layout/home.xml" value="0.25" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/itemlistbaber.xml" value="0.4" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/listbaber.xml" value="0.24909420289855072" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/login.xml" value="0.2" />
@@ -21,6 +23,8 @@
         <entry key="..\:/Android Studio/app/src/main/res/layout/pilihcapster.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/recycleviewbarber.xml" value="0.25317028985507245" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/schedule.xml" value="0.2" />
+        <entry key="..\:/Android Studio/app/src/main/res/layout/signup.xml" value="0.2" />
+        <entry key="..\:/Android Studio/app/src/main/res/layout/tokennotif.xml" value="0.14375" />
         <entry key="..\:/Android Studio/app/src/main/res/layout/treatment.xml" value="0.1" />
       </map>
     </option>

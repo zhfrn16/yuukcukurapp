@@ -5,10 +5,14 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -43,15 +47,16 @@ public class BabershopAdapter extends RecyclerView.Adapter<BabershopAdapter.Babe
         Integer id_barber = getBarber.getIdBarber();
         String nama_barber = getBarber.getNamaBarber();
         String status = getBarber.getStatus();
+        String gambar = getBarber.getGambar();
 
 
         holder.tvNama.setText(nama_barber);
         holder.tvDetail.setText(status);
 
-//        Glide.with(holder.itemView.getContext())
-//                .load(gambar_fitnes)
-//                .apply(new RequestOptions().fitCenter())
-//                .into(holder.gambar_fitnes);
+        Glide.with(holder.itemView.getContext())
+                .load(gambar)
+                .apply(new RequestOptions().fitCenter())
+                .into   (holder.gambar);
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
 
@@ -76,12 +81,13 @@ public class BabershopAdapter extends RecyclerView.Adapter<BabershopAdapter.Babe
     public class BabershopViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvNama, tvDetail;
+        ImageView gambar;
 
         public BabershopViewHolder (View itemView){
             super(itemView);
             tvNama = itemView.findViewById(R.id.tvNama);
             tvDetail = itemView.findViewById(R.id.tvDetail);
-
+            gambar = itemView.findViewById(R.id.gambar);
 
         }
     }

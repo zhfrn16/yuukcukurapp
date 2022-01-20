@@ -18,7 +18,7 @@
 
     <Button
 
-        android:id="@+id/login"
+        android:id="@+id/buttonlogin"
         android:layout_width="141dp"
         android:layout_height="57dp"
         android:layout_alignParentLeft="true"
@@ -32,6 +32,17 @@
         app:layout_constraintVertical_bias="0.805"
         tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressbar2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="22dp"-->
+<!--        android:layout_marginBottom="48dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textregister"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />-->
+
     <TextView
         android:id="@+id/logo"
         android:layout_width="213dp"
@@ -43,6 +54,7 @@
         android:layout_marginEnd="99dp"
         android:background="@drawable/imglogo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,6 +62,7 @@
         android:id="@+id/editTextUsername"
         android:layout_width="303dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="9dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Username"
@@ -88,8 +101,10 @@
         android:translationY="10sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.71" />
 
     <TextView
         android:id="@+id/textregister"
@@ -102,15 +117,17 @@
         android:layout_marginBottom="91dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="6sp"
+        android:onClick="signup"
         android:text="Sign up"
         android:textColor="#000000"
         android:textSize="10sp"
         android:textStyle="bold"
         android:translationY="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/login"
+        app:layout_constraintBottom_toTopOf="@+id/buttonlogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

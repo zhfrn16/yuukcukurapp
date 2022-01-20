@@ -52,6 +52,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
+        android:onClick="gmap"
         android:layout_alignParentTop="true"
         android:background="@drawable/imgbuttongeo"
         app:layout_constraintBottom_toBottomOf="parent"

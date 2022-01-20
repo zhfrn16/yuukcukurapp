@@ -14,6 +14,9 @@ public class GetBarber implements Parcelable {
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("gambar")
+    @Expose
+    private String gambar;
 
     public Integer getIdBarber() {
         return idBarber;
@@ -39,6 +42,16 @@ public class GetBarber implements Parcelable {
         this.status = status;
     }
 
+    public String getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
+    }
+
+
+
     @Override
     public int describeContents() {
         return 0;
@@ -49,12 +62,14 @@ public class GetBarber implements Parcelable {
         dest.writeValue(this.idBarber);
         dest.writeString(this.namaBarber);
         dest.writeString(this.status);
+        dest.writeString(this.gambar);
     }
 
     public void readFromParcel(Parcel source) {
         this.idBarber = (Integer) source.readValue(Integer.class.getClassLoader());
         this.namaBarber = source.readString();
         this.status = source.readString();
+        this.gambar = source.readString();
     }
 
     public GetBarber() {
@@ -64,6 +79,7 @@ public class GetBarber implements Parcelable {
         this.idBarber = (Integer) in.readValue(Integer.class.getClassLoader());
         this.namaBarber = in.readString();
         this.status = in.readString();
+        this.gambar = in.readString();
     }
 
     public static final Parcelable.Creator<GetBarber> CREATOR = new Parcelable.Creator<GetBarber>() {

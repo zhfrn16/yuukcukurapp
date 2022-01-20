@@ -31,4 +31,9 @@ public class MainActivity extends AppCompatActivity {
     public void checkLogin(View view) {
     }
 
+
+    public void signup(View view) {
+        Intent intent2 = new Intent(getBaseContext(), Signup.class);
+        startActivity(intent2);
+    }
 }
